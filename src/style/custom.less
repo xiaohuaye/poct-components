@@ -1,0 +1,210 @@
+@import "variable.less";
+
+// btn 全局修改
+.ant-btn {
+  height: 45 * @vpx;
+  font-size: @normal-font-size;
+  border-radius: 10 * @vpx;
+  box-shadow: 1px 1px 1px 1px rgba(0, 91, 172, 0.5);
+  &.ant-btn-primary {
+    background-color: secondary-color;
+    color: #fff;
+    box-shadow: 1px 1px 1px 1px rgba(0, 91, 172, 0.5);
+    &[disabled] {
+      box-shadow: 1px 1px 1px 1px rgba(222, 222, 222, 0.5);
+      background-color: @container-color;
+      color: #ccc;
+    }
+  }
+}
+// picker 下 btn 样式修改
+.ant-picker-panel {
+  .ant-picker-footer {
+    font-size: @small-font-size;
+    .ant-btn {
+      height: 35 * @vpx;
+      font-size: @small-font-size;
+    }
+  }
+}
+// 底部栏(footer) 下的 btn 无 box-shadow
+.footer-center,
+.footer-right {
+  .ant-btn {
+    box-shadow: none;
+    &.ant-btn-primary {
+      box-shadow: none;
+    }
+  }
+}
+
+// input/select/radio/switch/date/time 全局修改
+.ant-input,
+.ant-select
+{
+  width: @inputWidth;
+  border-radius: @border-radius;
+}
+
+.ant-picker {
+  width: 160 * @vpx;
+  border-radius: @border-radius;
+}
+
+.ant-input,
+.ant-select,
+.ant-picker,
+.ant-picker-input>input,
+.ant-radio-group {
+  font-size: @input-font-size;
+}
+
+.ant-input {
+  height: @inputHeight;
+}
+.ant-select,
+.ant-picker{
+  height: @inputHeight + 2 * @vpx;
+}
+
+.ant-picker {
+  padding-left: 0;
+}
+
+.ant-picker-input {
+  padding: 0 10 * @vpx;
+}
+
+// picker-time 滚动条
+@picker-time-scroll-vpx: 10 * @vpx;
+.ant-picker-time-panel-column {
+  &::-webkit-scrollbar {
+    width: @picker-time-scroll-vpx;
+    height: @picker-time-scroll-vpx;
+  }
+  &::-webkit-scrollbar-button:vertical:start,
+  &::-webkit-scrollbar-button:vertical:end {
+    height: @picker-time-scroll-vpx;
+    background-size: @picker-time-scroll-vpx;
+  }
+}
+
+.ant-select-single.ant-select-lg:not(.ant-select-customize-input) {
+  .ant-select-selector {
+    height: @inputHeight + 2 * @vpx;
+    line-height:  @inputHeight + 2 * @vpx;
+    border-radius: @border-radius;
+    .ant-select-selection-item,
+    .ant-select-selection-placeholder,
+    &::after {
+      height: @inputHeight;
+      line-height:  @inputHeight;
+    }
+  }
+}
+
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  background-color: @secondary-color;
+  border-color: @secondary-color;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  color: @secondary-color;
+}
+
+.ant-switch-checked {
+  background-color: @secondary-color;
+}
+
+// Modal.method() 全局样式修改
+.ant-modal.global-modal {
+  .ant-modal-content {
+    border-radius: 5 * @vpx;
+  }
+  .ant-modal-confirm-body {
+    >.anticon {
+      font-size: 30 * @vpx;
+    }
+    .ant-modal-confirm-title,
+    .ant-modal-confirm-content {
+      font-size: @normal-font-size;
+    }
+  }  
+}
+
+// message.method() 全局样式修改
+.ant-message {
+  font-size: @normal-font-size;
+  .anticon {
+    font-size: @normal-font-size;
+  }
+}
+
+// tabs 全局样式修改 [字体大小]
+.ant-tabs {
+  .ant-tabs-nav {
+    .ant-tabs-tab {
+      font-size: @normal-font-size;
+    }
+    &::before {
+      border-color: @grey4;
+    }
+  }
+}
+
+// pagination
+.ant-pagination-item,
+.ant-pagination-prev,
+.ant-pagination-next,
+.ant-pagination-jump-prev,
+.ant-pagination-jump-next {
+  min-width: 46 * @vpx;
+  height: 46 * @vpx;
+  line-height: 46 * @vpx;
+  .shadow();
+  border-radius: @border-radius;
+  margin-right: 20 * @vpx;
+}
+
+.ant-table-pagination.ant-pagination {
+  float: left;
+  margin: 13px 0;
+  margin-left: 200 * @vpx;
+}
+
+// form 表单下的 label
+.ant-form label {
+  font-size: @normal-font-size;
+  &.ant-radio-button-wrapper {
+    font-size: @input-font-size;
+  }
+}
+
+.ant-descriptions-item-label,
+.ant-descriptions-item-content,
+.ant-checkbox-wrapper,
+.ant-radio-wrapper {
+  font-size: @input-font-size;
+}
+
+.ant-modal-body,
+.ant-layout-footer {
+  font-size: @normal-font-size;
+}
+
+.ant-menu-title-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ant-progress-success-bg,
+.ant-progress-bg,
+.ant-progress-status-success .ant-progress-bg {
+  background-color: @secondary-color;
+}
+
+.ant-input-group-addon {
+  border-top-right-radius: @border-radius;
+  border-bottom-right-radius: @border-radius;
+}

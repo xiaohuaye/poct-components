@@ -1,0 +1,364 @@
+@import "normalize.less";
+@import "custom.less";
+
+@scroll-vpx: 32 * @vpx;
+
+// 全局滚动条样式修改
+::-webkit-scrollbar {
+  width: @scroll-vpx;
+  height: @scroll-vpx;
+}
+
+::-webkit-scrollbar-track {
+  background-color: @grey2;
+}
+
+::-webkit-scrollbar-button {
+  background-color: @grey4;
+}
+
+::-webkit-scrollbar-button:vertical:start {
+  height: @scroll-vpx;
+  cursor: pointer;
+  background: @grey2 url("@/assets/arrow-top.png") no-repeat 0 0;
+  background-size: @scroll-vpx;
+}
+
+::-webkit-scrollbar-button:horizontal:start {
+  width: @scroll-vpx;
+  cursor: pointer;
+  background: @grey2 url("@/assets/arrow-left.png") no-repeat 0 0;
+  background-size: @scroll-vpx;
+}
+
+::-webkit-scrollbar-button:vertical:end {
+  height: @scroll-vpx;
+  cursor: pointer;
+  background: @grey2 url("@/assets/arrow-bottom.png") no-repeat 0 0;
+  background-size: @scroll-vpx;
+}
+
+::-webkit-scrollbar-button:horizontal:end {
+  width: @scroll-vpx;
+  cursor: pointer;
+  background: @grey2 url("@/assets/arrow-right.png") no-repeat 0 0;
+  background-size: @scroll-vpx;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: @grey2;
+}
+
+::-webkit-scrollbar-thumb {
+  // background-color: @secondary-color;
+  background-color: @grey4;
+  border-radius: @scroll-vpx / 2;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: @grey2;
+}
+
+// input[type=number] 去掉上下箭头
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+// 普通按钮的样式
+.btnDefault {
+  padding-left: 10 * @vpx;
+  padding-right: 10 * @vpx;
+  box-shadow: 1px 1px 1px 1px rgba(0, 91, 172, 0.5);
+  background-color: @secondary-color;
+  border-radius: 10 * @vpx;
+  color: white;
+  width: 80 * @vpx;
+  height: 45 * @vpx;
+
+  &.disabled,
+  &[disabled] {
+    box-shadow: 1px 1px 1px 1px rgba(222, 222, 222, 0.5);
+    background-color: @container-color;
+    color: #ccc;
+  }
+
+  // 内含svg图标的
+  .svg-icon {
+    margin-right: 5 * @vpx;
+    width: 25 * @vpx;
+    height: 25 * @vpx;
+    vertical-align: text-bottom;
+  }
+}
+
+// 次要按钮的样式
+.secondaryBtn {
+  padding-left: 10 * @vpx;
+  padding-right: 10 * @vpx;
+  box-shadow: 1px 1px 1px 1px rgba(0, 91, 172, 0.5);
+  background-color: white;
+  border-radius: 10 * @vpx;
+  color: @secondary-color;
+  width: 80 * @vpx;
+  height: 45 * @vpx;
+
+  &.disabled {
+    box-shadow: 1px 1px 1px 1px rgba(222, 222, 222, 0.5);
+    background-color: @container-color;
+    color: #ccc;
+  }
+
+  // 内含svg图标的
+  .svg-icon {
+    margin-right: 5 * @vpx;
+    width: 25 * @vpx;
+    height: 25 * @vpx;
+    vertical-align: text-bottom;
+  }
+}
+
+// 危险按钮的样式
+.dangerBtn {
+  padding-left: 10 * @vpx;
+  padding-right: 10 * @vpx;
+  box-shadow: 1px 1px 1px 1px @allowance-red;
+  background-color: @err-color;
+  border-radius: 10 * @vpx;
+  color: white;
+  width: 80 * @vpx;
+  height: 45 * @vpx;
+
+  &.disabled {
+    box-shadow: 1px 1px 1px 1px rgba(222, 222, 222, 0.5);
+    background-color: @container-color;
+    color: #ccc;
+  }
+
+  // 内含svg图标的
+  .svg-icon {
+    margin-right: 5 * @vpx;
+    width: 25 * @vpx;
+    height: 25 * @vpx;
+    vertical-align: text-bottom;
+  }
+}
+
+.tableOperationBtn {
+  font-size: @small-font-size;
+  width: 40 * @vpx;
+  height: 30 * @vpx;
+  margin-right: 20 * @vpx;
+  padding-left: 10 * @vpx;
+  padding-right: 10 * @vpx;
+  box-shadow: 1px 1px 1px 1px rgba(0, 91, 172, 0.5);
+  background-color: @secondary-color;
+  border-radius: 10 * @vpx;
+  color: white;
+
+  &.disabled {
+    box-shadow: 1px 1px 1px 1px rgba(222, 222, 222, 0.5);
+    background-color: @container-color;
+    color: #ccc;
+  }
+
+  // 内含svg图标的
+  .svg-icon {
+    margin-right: 5 * @vpx;
+    width: 25 * @vpx;
+    height: 25 * @vpx;
+    vertical-align: text-bottom;
+  }
+}
+
+// 全局input默认样式
+.inputDefault {
+  height: @inputHeight;
+  width: @inputWidth;
+  border-radius: @border-radius;
+  padding: 0 10 * @vpx;
+}
+
+.inputNumDefault {
+  height: @inputHeight;
+  // width: @inputWidth / 2;
+  width: 80 * @vpx;
+  padding-left: 4 * @vpx;
+  padding-right: 4 * @vpx;
+}
+
+td,
+th,
+caption {
+  font-size: @small-font-size;
+}
+
+.shadow {
+  box-shadow: 0px 1px 0px 1px rgba(153, 153, 153, 0.2);
+}
+
+.shadow2 {
+  box-shadow: 0px 1px 0px 1px rgba(153, 153, 153, 0.2);
+}
+
+.holeShadow {
+  box-shadow: inset 2px 2px 2px 2px rgba(123, 123, 123, 0.2);
+}
+
+.sagShadow {
+  // box-shadow: inset 1px 1px 1px 1px rgba(123, 123, 123, 0.2);
+}
+
+.floatShadow {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+
+.subMenu {
+  background-color: #F2F2F2;
+
+  >.ant-menu {
+    background-color: #F2F2F2;
+
+    .ant-menu-item {
+      font-size: @normal-font-size;
+    }
+  }
+}
+
+
+
+// setting 中容器样式
+.settingTab {
+  height: 530 * @vpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: @container-color;
+  border-radius: 10px;
+  .shadow2();
+}
+
+// 系统时间
+.popup {
+  width: 245px;
+
+  .ant-time-picker-panel-select {
+    width: 245/3px;
+
+    ul {
+      width: 80px;
+    }
+  }
+}
+
+@keyframes flicker {
+  0% {
+    border-color: rgba(218, 34, 34, 1);
+  }
+
+  50% {
+    border-color: rgba(218, 34, 34, 0.5);
+  }
+
+  100% {
+    border-color: transparent;
+  }
+}
+
+.pointsTable {
+
+  td,
+  th,
+  caption {
+    font-size: 12px;
+  }
+}
+
+.default-modal {
+  min-height: 200 * @vpx;
+  min-width: 400 * @vpx;
+}
+
+.svg-icon.icon-cuvette {
+  width: 32 * @vpx;
+  height: 32 * @vpx;
+  fill: #000;
+}
+
+// 处理import条件引入时，样式丢失问题
+.consumables-wrapper {
+  padding: 0 10 * @vpx;
+  height: 620 * @vpx;
+  width: 100vw;
+
+  .basicContainer {
+    margin: 0;
+    position: relative;
+  }
+
+  .icon {
+    .svg-icon {
+      width: 40 * @vpx;
+      height: 40 * @vpx;
+      fill: #000;
+    }
+
+    .svg-icon.icon-cuvette {
+      width: 32 * @vpx;
+      height: 32 * @vpx;
+      fill: #000;
+    }
+  }
+
+  .status.warning {
+    color: @err-color;
+    font-weight: bold;
+  }
+
+  .operation {
+    .btnDefault {
+      font-size: @small-font-size;
+      width: 40 * @vpx;
+      height: 30 * @vpx;
+    }
+  }
+
+  // 稀释仓状态 弹出稀释仓
+  .dilutionBin {
+    text-align: right;
+    position: absolute;
+    bottom: 20 * @vpx;
+    right: 20 * @vpx;
+    width: 100%;
+    // width: 286 * @vpx;
+    display: flex;
+    // justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center;
+
+    // background-color: #fff;
+    // padding: 10* @vpx;
+    .dilutionBin-status {
+      margin: 15 * @vpx 30 * @vpx;
+      font-size: @large-font-size;
+    }
+
+    .dilutionBin-pop {
+      .btnDefault {
+        width: 70 * @vpx;
+
+        &.active {
+          width: 70 * @vpx;
+        }
+      }
+    }
+  }
+
+  ::v-deep(.selected td) {
+    background-color: #e6f7ff;
+  }
+}

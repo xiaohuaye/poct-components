@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Arimo-Regular';
+  src:url("./Arimo-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.flex{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+*{
+  box-sizing: content-box;
+}
+
+/* css reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+body { background:#fff; color:@grey10; font-size:@normal-font-size; font-family:"Arimo-Regular",  sans-serif; font-weight: 500; 
+  -webkit-touch-callout: none;  
+    -webkit-user-select: none;  
+    -khtml-user-select: none;  
+    -moz-user-select: none;  
+    -ms-user-select: none;  
+    user-select: none;  
+}
+td,th,caption { font-size:@normal-font-size; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { color:#555; text-decoration:none; }
+a:hover { text-decoration:underline; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select { font-size:@small-font-size; font-family: "Arimo-Regular",sans-serif; }
+button {font-size:@normal-font-size; font-family: "Arimo-Regular",sans-serif;}
+table { border-collapse:collapse; }
+html {overflow-y: scroll;} 
+/* css common */
+.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+
+html {
+  overflow: hidden;
+}
