@@ -9,6 +9,12 @@ function pathResolve(dir: string) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    include: [
+      'ant-design-vue/lib',
+      'qrcode',
+    ],
+  },
   plugins: [vue()],
   resolve: {
     alias: {

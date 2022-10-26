@@ -39,7 +39,8 @@ interface DataItem {
 const data: DataItem[] = [];
 const containers: string[] = [];
 
-const sampleType = ["全血"
+const sampleType = [
+    "全血"
     , "血浆"
     , "血清"
     , "血清/血浆"
@@ -48,11 +49,12 @@ const sampleType = ["全血"
     , "阴道分泌物"
     , "尿液"
     , "质控"
-    , "其他"]
+    , "其他"
+  ]
 
 for (let i = 0; i < sampleType.length; i++) {
   data.push({
-    key: i.toString(),
+    key: `${sampleType[i]}`,
     sampleType: `${sampleType[i]}`,
     containerType: `容器${i + 1}`,
     puncture: false,
@@ -71,6 +73,7 @@ const edit = (key: string) => {
 const save = (key: string) => {
   Object.assign(dataSource.value.filter(item => key === item.key)[0], editableData[key]);
   delete editableData[key];
+  console.log('dataSource', dataSource.value);
 };
 const cancel = (key: string) => {
   delete editableData[key];
@@ -80,7 +83,7 @@ const cancel = (key: string) => {
 
 <template>
   <div>
-    <a-table :columns="columns" :data-source="dataSource" bordered :pagination="false">
+    <a-table :columns="columns" :data-source="dataSource" bordered :pagination="false" :scroll="{y: '500px'}">
     <template #bodyCell="{ column, text, record }">
       <template v-if="column.dataIndex === 'containerType'">
         <div class="editable-row-operations">
@@ -117,11 +120,11 @@ const cancel = (key: string) => {
       <template v-else-if="column.dataIndex === 'operation'">
         <div class="editable-row-operations">
           <span v-if="editableData[record.key]">
-            <a-typography-link @click="save(record.key)">保存</a-typography-link>
-            <a-typography-link @click="cancel(record.key)">取消</a-typography-link>
+            <a-button class="btnDefault" @click="save(record.key)" >保存</a-button>
+            <a-button class="btnDefault" @click="cancel(record.key)">取消</a-button>
           </span>
           <span v-else>
-            <a @click="edit(record.key)">修改</a>
+            <a-button @click="edit(record.key)" class="btnDefault">修改</a-button>
           </span>
         </div>
       </template>
@@ -133,5 +136,11 @@ const cancel = (key: string) => {
 <style scoped lang="less">
   .editable-row-operations a {
   margin-right: 8px;
+}
+
+.btnDefault {
+  width: 40 * @vpx;
+  height: 25 * @vpx;
+  font-size: @small-font-size;
 }
 </style>

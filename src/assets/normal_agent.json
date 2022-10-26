@@ -1,0 +1,10 @@
+{
+  "reagent": {
+    "number": 7
+  },
+  "dilution": {
+    "cupTotal": 64,
+    "firLiquidTotal": 200,
+    "secLiquidTotal": 200
+  }
+}

@@ -13,10 +13,12 @@
     "@types/node": "^18.11.5",
     "ant-design-vue": "^3.1.1",
     "lodash-es": "^4.17.21",
+    "qrcode": "^1.5.1",
     "vue": "^3.2.41"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.6",
+    "@types/qrcode": "^1.5.0",
     "@vitejs/plugin-vue": "^3.1.2",
     "less": "^3.12.2",
     "less-loader": "^7.0.2",

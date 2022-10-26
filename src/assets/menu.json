@@ -1,0 +1,101 @@
+{
+  "menu": [
+    {
+      "key": "1",
+      "title": "帮助",
+      "icon": "help",
+      "children": [
+        {
+          "key": "1-1",
+          "title": "打开帮助文档",
+          "type": "route",
+          "routeName": "helpDocument"
+        },
+        {
+          "key": "1-2",
+          "title": "关于KCARD",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "key": "2",
+      "title": "项目管理",
+      "icon": "project",
+      "type": "route",
+      "routeName": "projectManagement"
+    },
+    {
+      "key": "3",
+      "title": "账户设置",
+      "icon": "accountSettings",
+      "type": "route",
+      "routeName": "setAccount"
+    },
+    {
+      "key": "5",
+      "title": "设置",
+      "icon": "settings",
+      "type": "route",
+      "routeName": "setModule"
+    },
+    {
+      "key": "6",
+      "title": "日志查询",
+      "icon": "logQuery",
+      "type": "route",
+      "routeName": "instrumentLogger"
+    },
+    {
+      "key": "7",
+      "title": "管路维护",
+      "icon": "maintenance",
+      "type": "function",
+      "group": ["user", "admin", "eng", "dev"]
+    },
+    {
+      "key": "8",
+      "title": "一键保养",
+      "icon": "unkeep",
+      "type": "function",
+      "group": ["user", "admin", "eng", "dev"]
+    },
+    {
+      "key": "13",
+      "title": "温控信息",
+      "icon": "temperature",
+      "type": "route",
+      "routeName": "temperatureModule"
+    },
+    {
+      "key": "10",
+      "title": "调试",
+      "icon": "debug",
+      "type": "route",
+      "routeName": "debugCommand",
+      "group": ["dev"]
+    },
+    {
+      "key": "11",
+      "title": "控制面板",
+      "icon": "controlPanel",
+      "type": "route",
+      "routeName": "controlPanel",
+      "group": ["dev"]
+    },
+    {
+      "key": "12",
+      "title": "仪器质控",
+      "icon": "instrumentQC",
+      "type": "route",
+      "routeName": "instrumentQC",
+      "group": ["user", "admin", "eng", "dev"]
+    },
+    {
+      "key": "9",
+      "title": "电源",
+      "icon": "shutDown",
+      "type": "function"
+    }
+  ]
+}
