@@ -1,5 +1,10 @@
 import { defineConfig } from 'vite'
 import * as path from 'path';
+import Vue from '@vitejs/plugin-vue'
+import Markdown from 'vite-plugin-md'
+import code from '@yankeeinlondon/code-builder'
+import anchor from 'markdown-it-anchor'
+import prism from 'markdown-it-prism'
 
 import vue from '@vitejs/plugin-vue';
 
@@ -15,7 +20,25 @@ export default defineConfig({
       'qrcode',
     ],
   },
-  plugins: [vue()],
+  plugins: [vue(
+    {
+      include: [/\.vue$/, /\.md$/],
+    }
+  ),
+  Markdown({
+    markdownItOptions: {
+      html: true,
+      linkify: true,
+      typographer: true,
+    },
+    markdownItSetup(md) {
+      // add anchor links to your H[x] tags
+      md.use(anchor)
+      // add code syntax highlighting with Prism
+      md.use(prism)
+    },
+  }),
+  ],
   resolve: {
     alias: {
       '@': pathResolve('src'),

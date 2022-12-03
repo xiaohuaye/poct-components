@@ -65,7 +65,7 @@ for (let i = 0; i < sampleType.length; i++) {
 }
 
 const dataSource = ref(data);
-const editableData: UnwrapRef<Record<string, DataItem>> = reactive({});
+const editableData: UnwrapRef<any> = reactive({});
 
 const edit = (key: string) => {
   editableData[key] = cloneDeep(dataSource.value.filter(item => key === item.key)[0]);
